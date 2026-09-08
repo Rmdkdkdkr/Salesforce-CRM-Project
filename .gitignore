@@ -3,6 +3,7 @@
 # documentation or assets intended for publication.
 /*
 !/.gitignore
+!/README.md
 !/sfdx-project.json
 !/force-app/
 !/force-app/**

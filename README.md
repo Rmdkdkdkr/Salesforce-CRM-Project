@@ -4,6 +4,8 @@
 
 Lead(잠재고객) 발굴부터 Opportunity(영업기회) 전환, 상품 추천, 제안서 생성, 미팅 준비, 만기 관리, 성과(KPI) 추적까지 RM의 업무 흐름 전체를 Salesforce 위에서 지원하는 팀 프로젝트입니다. 반복 업무를 자동화하고, 생성형 AI(Agentforce)로 미팅·이메일 초안을 만들어 상담 준비 시간을 줄이는 것을 목표로 했습니다.
 
+![RM Assistant 홈 대시보드](docs/images/home-dashboard.png)
+
 ## ✨ 주요 기능
 
 | 영역 | 기능 | 관련 구현 |
@@ -16,7 +18,36 @@ Lead(잠재고객) 발굴부터 Opportunity(영업기회) 전환, 상품 추천,
 | **성과 관리** | RM 개인/영업기회 KPI 대시보드, 목표 대비 실적 추적 | `MyKpiController`, `OpportunityKpiController`, `KPI_Target` Custom Metadata |
 | **영업기회 레이더** | 유망 고객 발굴 및 AI 이메일 초안 생성 | `OpportunityRadarController`, `Opportunity_Radar_Email_Draft` 프롬프트 템플릿 |
 
+### 📸 주요 화면
+
+**성과(KPI) 대시보드** — 영업기회 단계별 현황과 목표 대비 실적
+![KPI 대시보드](docs/images/kpi-dashboard.png)
+
+**미팅 준비 브리핑 (생성형 AI)** — 추천상품·재무·최근동향·미팅포인트를 상담 전 자동 정리
+![AI 미팅 브리핑](docs/images/meeting-briefing.png)
+
+**확정 조건서 PDF 자동 생성** — 상품·수수료 조건을 문서로 출력
+![확정 조건서 PDF](docs/images/proposal-pdf.png)
+
+<details>
+<summary>🔎 화면 더 보기 (미팅 노트 · 영업기회 레이더)</summary>
+
+**미팅 노트 — PII 마스킹 후 AI 상품 추천**
+메모 원문의 개인정보를 마스킹한 뒤, 마스킹본만 Agentforce에 전달합니다.
+![미팅 노트 마스킹](docs/images/meeting-note-masking.png)
+
+**영업기회 레이더** — 화이트스페이스 기준 유망 고객 발굴 및 AI 이메일 초안
+![영업기회 레이더](docs/images/opportunity-radar.png)
+
+</details>
+
 ## 🏗 아키텍처 & 기술 스택
+
+### 아키텍처 / 업무 흐름도
+
+![아키텍처 및 RM 업무 흐름도](docs/images/architecture.png)
+
+### 기술 스택
 
 - **Apex** — Service / Controller / Handler / Action / Batch 로 책임을 분리한 계층 구조. 주요 로직마다 테스트 클래스를 작성해 커버리지를 확보했습니다.
 - **Lightning Web Components (LWC)** — 홈 대시보드, KPI 카드, 상품추천, 제안서 생성기, 미팅 노트패드 등 16개 컴포넌트
@@ -41,6 +72,8 @@ Lead(잠재고객) 발굴부터 Opportunity(영업기회) 전환, 상품 추천,
 - **Agentforce 기능** — 생성형 AI 프롬프트 템플릿을 활용한 미팅·이메일 초안 자동 생성
 - **작업 규칙 설계** — Flow·Trigger 기반 업무 자동화 규칙 설계
 - 팀 리드로서 일정 관리, 역할 분배, 산출물 통합 담당
+
+![데이터 모델 (ERD)](docs/images/erd.png)
 
 ## 📦 프로젝트 정보
 

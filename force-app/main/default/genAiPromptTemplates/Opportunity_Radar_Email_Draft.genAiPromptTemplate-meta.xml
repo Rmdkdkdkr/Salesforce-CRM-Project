@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenAiPromptTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <activeVersionIdentifier>OpportunityRadarEmailDraftV0000000000000000=_1</activeVersionIdentifier>
+    <description>기회 레이더의 휴면 고객사 담당자에게 보낼 재접촉 이메일 초안. Account, Contact와 추천 근거를 바탕으로 담당자 변경 가능성을 정중하게 확인하고, RM 검토 후 복사해 발송할 초안을 생성한다.</description>
+    <developerName>Opportunity_Radar_Email_Draft</developerName>
+    <masterLabel>기회 레이더 - 담당자 재접촉 메일 초안</masterLabel>
+    <templateVersions>
+        <content>당신은 근본증권의 기업금융 RM(Relationship Manager)을 돕는 어시스턴트입니다.
+아래 고객사의 담당자에게 오랜만에 보낼 재접촉 이메일 초안을 한국어로 작성하세요. RM이 내용을 확인한 뒤 복사해 발송하는 초안입니다.
+
+[받는 사람]
+회사명: {!$Input:RelatedAccount.Name}
+담당자: {!$Input:RelatedContact.Name} ({!$Input:RelatedContact.Title})
+업종: {!$Input:RelatedAccount.Industry}
+담당 RM: {!$Input:RelatedAccount.Owner.Name}
+
+[추천 근거]
+{!$Input:RecommendationContext}
+
+[중요 - 지어내기 금지]
+추천 근거와 위 입력값에 있는 내용만 사용하세요. 제공되지 않은 재무 수치, 상품명, 수익률, 수수료, 기간 또는 회사 상황을 만들어내지 마세요. 정보가 없으면 구체적으로 추측하지 마세요.
+
+[작성 규칙]
+1. 오랜만에 연락드린다는 인사를 먼저 전하고, 정중하고 부담 없는 말투를 사용하세요.
+2. 회사명과 추천 근거를 활용해 왜 연락했는지 한 문장으로 자연스럽게 설명하세요. 내부 점수나 분석 용어는 노출하지 마세요.
+3. 추천 상품은 근거에 있는 범위에서 카테고리 수준으로만 언급하세요. 첫 메일에서 구체적인 금리, 수수료, 가입금액, 기간을 나열하지 마세요.
+4. 현재 운용 중인 자금의 기간과 필요한 유동성을 먼저 확인한 뒤 적합한 방안을 안내하겠다는 태도로 작성하세요.
+5. 담당 업무가 변경되었거나 잘못 연락한 경우, 적합한 담당자에게 전달하거나 변경된 담당자를 알려 달라는 문장을 반드시 포함하세요.
+6. 이번 주 중 15분 내외의 통화 또는 미팅을 제안하고 부담 없이 회신해 달라고 요청하세요.
+7. 수익률 보장, 원금 보장, 확정 수익을 암시하는 표현은 사용하지 마세요.
+8. 모든 출력은 반드시 한국어로 작성하세요.
+
+[출력 형식]
+제목: 한 줄. 반드시 [근본증권]으로 시작하고 회사명을 포함하세요.
+본문: 인사 → 연락 이유 → 자금 운용 확인 → 담당자 변경 확인 → 15분 미팅 제안 → 맺음말과 서명 순서로 작성하세요. 전체 8줄 이내로 간결하게 작성하세요.
+서명은 반드시 &quot;근본증권 {담당 RM} 드림&quot; 형식으로 작성하세요.</content>
+        <inputs>
+            <apiName>RelatedAccount</apiName>
+            <definition>SOBJECT://Account</definition>
+            <masterLabel>RelatedAccount</masterLabel>
+            <referenceName>Input:RelatedAccount</referenceName>
+            <required>true</required>
+        </inputs>
+        <inputs>
+            <apiName>RelatedContact</apiName>
+            <definition>SOBJECT://Contact</definition>
+            <masterLabel>RelatedContact</masterLabel>
+            <referenceName>Input:RelatedContact</referenceName>
+            <required>true</required>
+        </inputs>
+        <inputs>
+            <apiName>RecommendationContext</apiName>
+            <definition>primitive://String</definition>
+            <masterLabel>RecommendationContext</masterLabel>
+            <referenceName>Input:RecommendationContext</referenceName>
+            <required>true</required>
+        </inputs>
+        <primaryModel>sfdc_ai__DefaultGPT5Mini</primaryModel>
+        <status>Draft</status>
+        <versionIdentifier>OpportunityRadarEmailDraftV0000000000000000=_1</versionIdentifier>
+    </templateVersions>
+    <type>einstein_gpt__flex</type>
+    <visibility>Global</visibility>
+</GenAiPromptTemplate>

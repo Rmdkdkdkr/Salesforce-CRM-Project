@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Meeting_Scheduled_At__c</fullName>
+    <description>Lead 변환 전에 예정된 고객 미팅 일시를 기록하고 변환 후 일정 Task 생성의 기준으로 사용합니다.</description>
+    <inlineHelpText>Lead를 변환하기 전에 고객 미팅 시작 일시를 입력하세요.</inlineHelpText>
+    <label>미팅 일정</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>DateTime</type>
+</CustomField>

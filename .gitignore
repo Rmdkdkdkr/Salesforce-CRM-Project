@@ -1,0 +1,32 @@
+# Public-release allowlist: only Salesforce source and project config are
+# eligible for an accidental `git add .`. Review and explicitly unignore any
+# documentation or assets intended for publication.
+/*
+!/.gitignore
+!/README.md
+!/sfdx-project.json
+!/force-app/
+!/force-app/**
+!/docs/
+!/docs/**
+
+# Salesforce local state and generated retrieve/deploy artifacts
+.sf/
+.sfdx/
+.tmp/
+.retrieve-*/
+.diagnose-*
+.verify-*
+.deploy-preview-*/
+audit-*/
+
+# Local scratch Apex, exports, analysis output, and archives
+/*.apex
+Jira_*
+code-analyzer-*
+*.log
+*.zip
+/force-app/unpackaged.zip
+
+# OS/editor noise
+.DS_Store

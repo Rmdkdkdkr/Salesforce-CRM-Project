@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>65.0</apiVersion>
+    <isExposed>true</isExposed>
+    <masterLabel>Meeting Note Pad</masterLabel>
+    <description>미팅 메모, 수수료 조건 계산, Agentforce 추천과 후속 질문을 제공하는 Flow 화면 컴포넌트</description>
+    <targets>
+        <target>lightning__FlowScreen</target>
+    </targets>
+    <targetConfigs>
+        <targetConfig targets="lightning__FlowScreen">
+            <property
+                name="recordId"
+                type="String"
+                label="컨텍스트 레코드 ID"
+                description="Flow URL 또는 진입 버튼에서 전달된 Lead, Account, Contact, Opportunity, Event ID"
+                role="inputOnly"
+            />
+            <property
+                name="rawContent"
+                type="String"
+                label="미팅 원문"
+                role="outputOnly"
+            />
+            <property
+                name="followUpQuestion"
+                type="String"
+                label="추가 질문(미사용)"
+                role="outputOnly"
+            />
+            <property
+                name="recommendation"
+                type="String"
+                label="에이전트 추천"
+                description="Flow 또는 Agentforce 처리 결과를 LWC에 전달"
+                role="inputOnly"
+            />
+            <property
+                name="sanitizedContent"
+                type="String"
+                label="마스킹된 메모"
+                description="PII가 마스킹된 미팅 메모 내용"
+                role="inputOnly"
+            />
+            <property
+                name="maskedCount"
+                type="Integer"
+                label="마스킹 건수"
+                description="마스킹 처리된 PII 항목 수"
+                role="inputOnly"
+            />
+            <property
+                name="isSubmitting"
+                type="Boolean"
+                label="제출 중"
+                description="Flow에서 제어하는 로딩 상태"
+                role="inputOnly"
+            />
+            <property
+                name="normalizedRecommendation"
+                type="String"
+                label="정규화된 에이전트 추천"
+                description="Agentforce 응답에서 사용자에게 표시할 추천 메시지만 추출"
+                role="outputOnly"
+            />
+            <property
+                name="meetingNoteId"
+                type="String"
+                label="등록된 미팅 메모 Id"
+                description="[메모 등록]으로 저장된 Meeting_Note__c Id. [미팅 저장] 시 최종 저장 액션에 전달 (docs/60)"
+                role="outputOnly"
+            />
+            <property
+                name="opportunityId"
+                type="String"
+                label="연결된 영업기회 Id"
+                description="메모 등록 시 연결된 Opportunity Id. 완료 팝업 [확인] 시 이동 대상"
+                role="outputOnly"
+            />
+            <property
+                name="selectedProductName"
+                type="String"
+                label="선택된 상품명"
+                description="사용자가 선택 확정한 추천 상품명"
+                role="outputOnly"
+            />
+            <property
+                name="selectedRecommendationText"
+                type="String"
+                label="선택된 추천 텍스트"
+                description="선택 확정 시점의 추천 전문"
+                role="outputOnly"
+            />
+        </targetConfig>
+    </targetConfigs>
+</LightningComponentBundle>

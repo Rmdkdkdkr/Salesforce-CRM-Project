@@ -68,24 +68,9 @@ RM이 넘긴 조건이 미팅 요약 · 수수료 조건 · 승인 요청 사유
 홈의 만기 알림에서 고객을 누르면 기회 레이더로 이어지고, 추천 상품을 골라 카탈로그가 첨부된 맞춤 메일까지 바로 보냅니다.
 ![만기 알림에서 레이더, 맞춤 메일까지](docs/images/scene05-maturity-radar.gif)
 
-<details>
-<summary>🔎 레이더 화면 크게 보기</summary>
-
-"고객 지갑 − 우리 잔액"을 화이트스페이스로 잡고, 성공 가능성과 교차해 공략 우선순위를 매깁니다.
-![영업기회 레이더](docs/images/opportunity-radar.png)
-
-</details>
-
 **⑥ Tableau 팀장 코칭 대시보드**
 팀장이 고객 정보 없이 팀원별 KPI · 단계별 체류 히트맵 · 팀 영업 퍼널 · 리스크존 위험 매트릭스로 팀의 병목을 확인하고, 코칭이 필요한 팀원에게 Slack 메시지와 후속 할 일을 남깁니다.
 ![Tableau 팀장 대시보드](docs/images/scene06-tableau.gif)
-
-<details>
-<summary>🔎 대시보드 크게 보기</summary>
-
-![Tableau 팀장 대시보드 전체 화면](docs/images/tableau-team-dashboard.png)
-
-</details>
 
 ---
 

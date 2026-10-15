@@ -52,32 +52,27 @@ RM이 판단을 더 잘하도록 돕는 것이 목표이지, 판단을 대신하
 ![확정 조건서 PDF](docs/images/proposal-pdf.png)
 
 <details>
-<summary>🔎 화면 더 보기 (미팅 노트 · 영업기회 레이더)</summary>
+<summary>🔎 화면 더 보기 (미팅 노트)</summary>
 
 **미팅 노트 — 개인정보 마스킹 후 AI 상품 추천**
 메모 원문은 그대로 보관하고, 마스킹본만 Agentforce로 넘깁니다.
 ![미팅 노트 마스킹](docs/images/meeting-note-masking.png)
 
-**영업기회 레이더 — 화이트스페이스 기준 유망 고객 발굴**
-"고객 지갑 − 우리 잔액"을 화이트스페이스로 잡고, 성공 가능성과 교차해 공략 우선순위를 매깁니다.
-![영업기회 레이더](docs/images/opportunity-radar.png)
-
 </details>
 
-**④ 만기 알림 → 영업기회 레이더 → 맞춤 메일**
-홈의 만기 알림에서 고객을 누르면 기회 레이더로 이어지고, 추천 상품을 골라 카탈로그가 첨부된 맞춤 메일까지 바로 보냅니다.
-![만기 알림에서 레이더, 맞춤 메일까지](docs/images/scene05-maturity-radar.gif)
-
-**⑤ Slack 조건 검토 · 승인 회신**
+**④ Slack 조건 검토 · 승인 회신**
 RM이 넘긴 조건이 미팅 요약 · 수수료 조건 · 승인 요청 사유와 함께 상품팀 Slack 채널로 전달되고, 상품팀은 Slack에서 바로 승인 · 반려 · 매니저 결재를 누릅니다. 결재가 끝나면 결과와 확정 조건서 PDF가 같은 채널에 자동으로 올라옵니다.
 ![Slack 조건 검토와 승인 회신](docs/images/scene04-slack-approval.gif)
 
-<details>
-<summary>🔎 Slack 화면 크게 보기</summary>
+**⑤ 만기 알림 → 영업기회 레이더 → 맞춤 메일**
+홈의 만기 알림에서 고객을 누르면 기회 레이더로 이어지고, 추천 상품을 골라 카탈로그가 첨부된 맞춤 메일까지 바로 보냅니다.
+![만기 알림에서 레이더, 맞춤 메일까지](docs/images/scene05-maturity-radar.gif)
 
-| 조건 검토 요청 | 매니저 결재 완료 · 조건서 PDF 회신 |
-|---|---|
-| ![Slack 조건 검토 요청](docs/images/slack-review-request.png) | ![Slack 승인 결과 회신](docs/images/slack-approval-result.png) |
+<details>
+<summary>🔎 레이더 화면 크게 보기</summary>
+
+"고객 지갑 − 우리 잔액"을 화이트스페이스로 잡고, 성공 가능성과 교차해 공략 우선순위를 매깁니다.
+![영업기회 레이더](docs/images/opportunity-radar.png)
 
 </details>
 

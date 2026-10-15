@@ -9,9 +9,14 @@
   <img alt="LWC" src="https://img.shields.io/badge/Lightning%20Web%20Components-16-0176D3">
   <img alt="Agentforce" src="https://img.shields.io/badge/Agentforce-Prompt%20Templates-032D60">
   <img alt="Data Cloud" src="https://img.shields.io/badge/Data%20Cloud-grounding-00A1E0">
+  <img alt="Slack" src="https://img.shields.io/badge/Slack-Integration-4A154B?logo=slack&logoColor=white">
+  <img alt="Tableau" src="https://img.shields.io/badge/Tableau-Dashboard-E97627?logo=tableau&logoColor=white">
 </p>
 
-**team3 팀 프로젝트** · Salesforce CRM 구축 최종 프로젝트 (가상 증권사 "근본증권" 시나리오)
+**BORN(3조) 5인 팀 프로젝트** · Salesforce AI CRM 과정 최종 프로젝트 · 가상 증권사 "근본증권" 시나리오
+**이상윤 — Developer (Slack · Tableau 연동, 만기 알림, 영업기회 레이더 화면)** → [담당 역할 바로 보기](#담당-역할-이상윤--developer)
+
+📑 [최종 발표 자료 (시연 영상 포함)](https://docs.google.com/presentation/d/1x-TAfkbx1M5HRorCXdKZDYr7ElnFRIyUPDb4PDniIMc/view)
 
 ![RM Assistant 홈 대시보드](docs/images/home-dashboard.png)
 
@@ -55,6 +60,34 @@ RM이 판단을 더 잘하도록 돕는 것이 목표이지, 판단을 대신하
 **영업기회 레이더 — 화이트스페이스 기준 유망 고객 발굴**
 "고객 지갑 − 우리 잔액"을 화이트스페이스로 잡고, 성공 가능성과 교차해 공략 우선순위를 매깁니다.
 ![영업기회 레이더](docs/images/opportunity-radar.png)
+
+</details>
+
+**④ 만기 알림 → 영업기회 레이더 → 맞춤 메일 (이상윤 담당)**
+홈의 만기 알림에서 고객을 누르면 기회 레이더로 이어지고, 추천 상품을 골라 카탈로그가 첨부된 맞춤 메일까지 바로 보냅니다.
+![만기 알림에서 레이더, 맞춤 메일까지](docs/images/scene05-maturity-radar.gif)
+
+**⑤ Slack 조건 검토 · 승인 회신 (이상윤 담당)**
+RM이 넘긴 조건이 미팅 요약 · 수수료 조건 · 승인 요청 사유와 함께 상품팀 Slack 채널로 전달되고, 상품팀은 Slack에서 바로 승인 · 반려 · 매니저 결재를 누릅니다. 결재가 끝나면 결과와 확정 조건서 PDF가 같은 채널에 자동으로 올라옵니다.
+![Slack 조건 검토와 승인 회신](docs/images/scene04-slack-approval.gif)
+
+<details>
+<summary>🔎 Slack 화면 크게 보기</summary>
+
+| 조건 검토 요청 | 매니저 결재 완료 · 조건서 PDF 회신 |
+|---|---|
+| ![Slack 조건 검토 요청](docs/images/slack-review-request.png) | ![Slack 승인 결과 회신](docs/images/slack-approval-result.png) |
+
+</details>
+
+**⑥ Tableau 팀장 코칭 대시보드 (이상윤 담당)**
+팀장이 고객 정보 없이 팀원별 KPI · 단계별 체류 히트맵 · 팀 영업 퍼널 · 리스크존 위험 매트릭스로 팀의 병목을 확인하고, 코칭이 필요한 팀원에게 Slack 메시지와 후속 할 일을 남깁니다.
+![Tableau 팀장 대시보드](docs/images/scene06-tableau.gif)
+
+<details>
+<summary>🔎 대시보드 크게 보기</summary>
+
+![Tableau 팀장 대시보드 전체 화면](docs/images/tableau-team-dashboard.png)
 
 </details>
 
@@ -106,14 +139,21 @@ Lead → Opportunity 전환은 파이프라인 숫자를 만드는 행위입니�
 
 ---
 
-## 담당 역할 (팀 리드)
+## 담당 역할 (이상윤 · Developer)
 
-- **팀 리드** — 일정 관리, 역할 분배, 산출물 통합
-- **데이터 모델링** — Lead / Opportunity 오브젝트 및 필드 설계
-- **대시보드** — 홈 대시보드, KPI 대시보드 설계·구현
-- **보안 설계** — Permission Set 기반 접근 권한 분리 (`RM_Assistant_Access` / `Opportunity_Radar`)
-- **Agentforce** — 프롬프트 템플릿 기반 미팅 브리핑·이메일 초안 자동 생성
-- **작업 규칙 설계** — Flow·Trigger 기반 업무 자동화 규칙
+- **Slack 연동** — 상품팀 전달 시 딜 전용 Slack 채널 자동 생성 및 조건확정서 공유, 예외 조건 검토 요청과 매니저 승인 결과 회신, 팀장 코칭 메시지, 리드 자동 전환 실패 알림
+- **Tableau 팀장 대시보드** — 고객명 없이 팀원별 KPI · 단계별 체류 히트맵 · 팀 영업 퍼널 · 리스크존을 보는 코칭 뷰, 코칭 후보에게 Slack 메시지와 후속 Task로 연결
+- **만기 알림** — 만기가 30일 안으로 다가온 고객을 담당 RM에게 할 일과 알림으로 알려주고, 알림에서 영업기회 레이더로 바로 이어지도록 구성
+- **영업기회 레이더 화면** — 고객별 추가 영업 여지와 성공 가능성을 한 화면에서 비교하고, 추천 상품으로 맞춤 메일까지 보내는 화면
+- **홈 인사 배너 · 로딩 화면** — 홈 상단의 오늘 일정 요약 배너, 레이더 · 미팅 브리핑 · 미팅 노트의 로딩 화면
+
+| 이름 | 역할 | 담당 |
+|---|---|---|
+| 진승혜 | PM | User Story · Agentforce |
+| 강윤지 | PL | 보안 관리 · Permission |
+| 김환진 | Developer | 뉴스 · DART API |
+| **이상윤** | **Developer** | **Tableau · Slack 연동** |
+| 이주연 | Admin | Flow · 더미데이터 적재 |
 
 ![데이터 모델 (ERD)](docs/images/erd.png)
 
@@ -127,9 +167,12 @@ Lead → Opportunity 전환은 파이프라인 숫자를 만드는 행위입니�
 | **상품 추천** | 고객 재무 기준 금융상품 추천 (단일 계산 지점) | `LeadRecommendationEngine`, `LeadProductRecommendationService` |
 | **조건서 생성** | 고객 맞춤 확정 조건서 PDF 자동 생성 | `LeadProposalController`, `LeadProposalPdfController` |
 | **미팅 준비** | 상담 전 브리핑 및 이메일 초안 자동 작성 (생성형 AI) | `MeetingPrepBriefingProvider`, `Meeting_Prep_Email_Draft` |
-| **만기 관리** | 만기 30일 전 후속 Task 자동 생성 (멱등 배치) | `MaturityAlertBatch`, `MaturityAlertService` |
+| **만기 관리** ⭐ | 만기 30일 전 후속 Task 자동 생성 (멱등 배치), 벨 알림 → 레이더 이동 | `MaturityAlertBatch`, `MaturityAlertService` |
 | **성과 관리** | RM 개인·영업기회 KPI, 목표 대비 실적 추적 | `MyKpiController`, `OpportunityKpiController`, `KPI_Target` |
-| **영업기회 레이더** | 화이트스페이스 기반 유망 고객 발굴 및 AI 아웃리치 | `OpportunityRadarController`, `Opportunity_Radar_Email_Draft` |
+| **영업기회 레이더** ⭐ | 화이트스페이스 기반 유망 고객 발굴 및 AI 아웃리치 | `walletOpportunityRadar`, `radarEmailComposer` (화면), `OpportunityRadarController`, `Opportunity_Radar_Email_Draft` |
+| **Slack · Tableau** ⭐ | 딜 협업 채널 · 승인 회신 · 코칭 메시지 / 팀장 코칭 대시보드 | 발췌본 미포함 (시연 영상 참고) |
+
+⭐ = 이상윤 담당
 
 ---
 
@@ -181,4 +224,4 @@ sf project deploy start -d force-app -o myOrg   # 의존 오브젝트 선행 배
 
 ---
 
-*이 저장소는 학습/포트폴리오 목적의 프로젝트입니다.*
+*이 저장소는 학습/포트폴리오 목적의 팀 프로젝트입니다. 원본 커밋 기록은 팀 저장소에서 가져와 그대로 유지했습니다.*

@@ -151,7 +151,7 @@ Lead → Opportunity 전환은 파이프라인 숫자를 만드는 행위입니�
 | **만기 관리** ⭐ | 만기 30일 전 후속 Task 자동 생성 (멱등 배치), 벨 알림 → 레이더 이동 | `MaturityAlertBatch`, `MaturityAlertService` |
 | **성과 관리** | RM 개인·영업기회 KPI, 목표 대비 실적 추적 | `MyKpiController`, `OpportunityKpiController`, `KPI_Target` |
 | **영업기회 레이더** ⭐ | 화이트스페이스 기반 유망 고객 발굴 및 AI 아웃리치 | `walletOpportunityRadar`, `radarEmailComposer` (화면), `OpportunityRadarController`, `Opportunity_Radar_Email_Draft` |
-| **Slack · Tableau** ⭐ | 딜 협업 채널 · 승인 회신 · 코칭 메시지 / 팀장 코칭 대시보드 | 발췌본 미포함 (시연 영상 참고) |
+| **Slack · Tableau** ⭐ | 딜 협업 채널 · 승인 회신 · 코칭 메시지 / 팀장 코칭 대시보드 | Slack Web · Events API, `SlackAlertService` / Tableau Cloud (LWC 임베드) |
 
 ⭐ = 이상윤 담당
 

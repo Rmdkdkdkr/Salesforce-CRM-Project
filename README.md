@@ -14,7 +14,8 @@
 </p>
 
 **BORN(3조) 5인 팀 프로젝트** · Salesforce AI CRM 과정 최종 프로젝트 · 가상 증권사 "근본증권" 시나리오
-**이상윤 — Developer (Slack · Tableau 연동, 만기 알림, 영업기회 레이더 화면)** → [담당 역할 바로 보기](#담당-역할-이상윤--developer)
+
+**이상윤 — Developer (Slack · Tableau 연동, 만기 알림, 영업기회 레이더 화면)**
 
 📑 [최종 발표 자료 (시연 영상 포함)](https://docs.google.com/presentation/d/1x-TAfkbx1M5HRorCXdKZDYr7ElnFRIyUPDb4PDniIMc/view)
 
@@ -63,11 +64,11 @@ RM이 판단을 더 잘하도록 돕는 것이 목표이지, 판단을 대신하
 
 </details>
 
-**④ 만기 알림 → 영업기회 레이더 → 맞춤 메일 (이상윤 담당)**
+**④ 만기 알림 → 영업기회 레이더 → 맞춤 메일**
 홈의 만기 알림에서 고객을 누르면 기회 레이더로 이어지고, 추천 상품을 골라 카탈로그가 첨부된 맞춤 메일까지 바로 보냅니다.
 ![만기 알림에서 레이더, 맞춤 메일까지](docs/images/scene05-maturity-radar.gif)
 
-**⑤ Slack 조건 검토 · 승인 회신 (이상윤 담당)**
+**⑤ Slack 조건 검토 · 승인 회신**
 RM이 넘긴 조건이 미팅 요약 · 수수료 조건 · 승인 요청 사유와 함께 상품팀 Slack 채널로 전달되고, 상품팀은 Slack에서 바로 승인 · 반려 · 매니저 결재를 누릅니다. 결재가 끝나면 결과와 확정 조건서 PDF가 같은 채널에 자동으로 올라옵니다.
 ![Slack 조건 검토와 승인 회신](docs/images/scene04-slack-approval.gif)
 
@@ -80,7 +81,7 @@ RM이 넘긴 조건이 미팅 요약 · 수수료 조건 · 승인 요청 사유
 
 </details>
 
-**⑥ Tableau 팀장 코칭 대시보드 (이상윤 담당)**
+**⑥ Tableau 팀장 코칭 대시보드**
 팀장이 고객 정보 없이 팀원별 KPI · 단계별 체류 히트맵 · 팀 영업 퍼널 · 리스크존 위험 매트릭스로 팀의 병목을 확인하고, 코칭이 필요한 팀원에게 Slack 메시지와 후속 할 일을 남깁니다.
 ![Tableau 팀장 대시보드](docs/images/scene06-tableau.gif)
 

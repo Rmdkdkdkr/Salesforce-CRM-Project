@@ -148,7 +148,7 @@ Lead → Opportunity 전환은 파이프라인 숫자를 만드는 행위입니�
 | **상품 추천** | 고객 재무 기준 금융상품 추천 (단일 계산 지점) | `LeadRecommendationEngine`, `LeadProductRecommendationService` |
 | **조건서 생성** | 고객 맞춤 확정 조건서 PDF 자동 생성 | `LeadProposalController`, `LeadProposalPdfController` |
 | **미팅 준비** | 상담 전 브리핑 및 이메일 초안 자동 작성 (생성형 AI) | `MeetingPrepBriefingProvider`, `Meeting_Prep_Email_Draft` |
-| **만기 관리** ⭐ | 만기 30일 전 후속 Task 자동 생성 (멱등 배치), 벨 알림 → 레이더 이동 | `MaturityAlertBatch`, `MaturityAlertService` |
+| **만기 관리** ⭐ | 만기 30일 전 후속 Task 자동 생성 (중복 생성 방지), 벨 알림 → 레이더 이동 | `MaturityAlertBatch`, `MaturityAlertService` |
 | **성과 관리** | RM 개인·영업기회 KPI, 목표 대비 실적 추적 | `MyKpiController`, `OpportunityKpiController`, `KPI_Target` |
 | **영업기회 레이더** ⭐ | 화이트스페이스 기반 유망 고객 발굴 및 AI 아웃리치 | `walletOpportunityRadar`, `radarEmailComposer` (화면), `OpportunityRadarController`, `Opportunity_Radar_Email_Draft` |
 | **Slack · Tableau** ⭐ | 딜 협업 채널 · 승인 회신 · 코칭 메시지 / 팀장 코칭 대시보드 | Slack Web · Events API, `SlackAlertService` / Tableau Cloud (LWC 임베드) |
